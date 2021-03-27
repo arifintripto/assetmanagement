@@ -11,10 +11,15 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-sitemap"></i></div>
                     Hierarchy
                 </a>
-                <a class="nav-link" href="/employee">
-                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                    Employees
+                <a class="nav-link" href="/distribution">
+                    <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
+                    Distribution
                 </a>
+                <a class="nav-link" href="/reportpdf">
+                    <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
+                    Report PDF
+                </a>
+
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabsc" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-tablet-alt"></i></div>
                     Tabs

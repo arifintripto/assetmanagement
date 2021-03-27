@@ -15,10 +15,10 @@ class CreateHierarchiesTable extends Migration
     {
         Schema::create('hierarchies', function (Blueprint $table) {
             $table->id();
-            $table->string('code', 10);
-            $table->string('parent_code', 10);
-            $table->string('name', 100);
-            $table->string('area', 100);
+            $table->string('code', 30);
+            $table->string('parent_code', 30);
+            $table->string('name', 150);
+            $table->string('area', 150);
             $table->timestamps();
         });
     }

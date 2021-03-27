@@ -4,6 +4,8 @@ use App\Models\Department;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HierarchyController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +21,8 @@ Route::get('/', function () {
     return view('dashboard.pages.dashboard.index');
 });
 Route::resource('hierarchy', HierarchyController::class);
-
+Route::resource('report', ReportController::class);
+Route::get('/reportpdf', [PDFController::class ,'generatePDF']);
 
 //Route::get('upload_tab_csv', [AlltabsController::class ,'create']);
 //Route::post('upload_tab_csv', [AlltabsController::class ,'store']);
