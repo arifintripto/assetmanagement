@@ -16,6 +16,6 @@ class PDFController extends Controller
 
         $pdf = PDF::loadView('dashboard.layout.pdf', $data);
 
-        return $pdf->download('Report.pdf');
+        return $pdf->stream('Report.pdf');
     }
 }

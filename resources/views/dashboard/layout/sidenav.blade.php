@@ -15,7 +15,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                     Distribution
                 </a>
-                <a class="nav-link" href="/reportpdf">
+                <a class="nav-link" href="/reportpdf" target="_blank">
                     <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                     Report PDF
                 </a>
