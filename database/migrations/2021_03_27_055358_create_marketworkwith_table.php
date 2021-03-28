@@ -15,21 +15,22 @@ class CreateMarketworkwithTable extends Migration
     {
         Schema::create('marketworkwith', function (Blueprint $table) {
             $table->id();
-            $table->string('beat_visited');
-            $table->decimal('daily_avg');
-            $table->decimal('day_tgt');
-            $table->decimal('asking_rate');
-            $table->boolean('spo_knwl_prep');
-            $table->integer('total_outlets');
-            $table->integer('outlets_worked');
-            $table->integer('eff_calls');
-            $table->decimal('total_memo_value');
-            $table->decimal('av_lpc');
-            $table->boolean('9steps');
-            $table->decimal('focus_sku');
-            $table->boolean('samples');
-            $table->boolean('tab_used');
-            $table->boolean('sfa_compliance');
+            $table->bigInteger('market_report_id')->default(1);
+            $table->string('market_beat_visited')->nullable();
+            $table->decimal('market_daily_avg')->nullable();
+            $table->decimal('market_day_tgt')->nullable();
+            $table->decimal('market_asking_rate')->nullable();
+            $table->boolean('market_spo_knwl_prep')->nullable();
+            $table->integer('market_total_outlets')->nullable();
+            $table->integer('market_outlets_worked')->nullable();
+            $table->integer('market_eff_calls')->nullable();
+            $table->decimal('market_total_memo_value')->nullable();
+            $table->decimal('market_av_lpc')->nullable();
+            $table->boolean('market_9steps')->nullable();
+            $table->decimal('market_focus_sku')->nullable();
+            $table->boolean('market_samples')->nullable();
+            $table->boolean('market_tab_used')->nullable();
+            $table->boolean('market_sfa_compliance')->nullable();
             $table->timestamps();
         });
     }

@@ -15,11 +15,14 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                     Distribution
                 </a>
+                <a class="nav-link" href="{{ route('report.create') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
+                    Create Report
+                </a>
                 <a class="nav-link" href="/reportpdf" target="_blank">
                     <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                     Report PDF
                 </a>
-
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabsc" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-tablet-alt"></i></div>
                     Tabs

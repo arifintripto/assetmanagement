@@ -15,8 +15,8 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->string('date');
-            $table->boolean('asm_rsm');
+            $table->string('report_date');
+            $table->boolean('report_asm_rsm')->default(1);
             $table->string('report_area');
             $table->string('report_asm');
             $table->string('report_territory');
