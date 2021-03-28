@@ -15,15 +15,15 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->string('report_date');
-            $table->boolean('report_asm_rsm')->default(1);
-            $table->string('report_area');
-            $table->string('report_asm');
-            $table->string('report_territory');
-            $table->string('report_tso');
-            $table->string('report_town');
-            $table->string('report_spo');
-            $table->string('report_db');
+            $table->string('report_date')->nullable();
+            $table->boolean('report_asm_rsm')->default(1)->nullable();
+            $table->string('report_area')->nullable();
+            $table->string('report_asm')->nullable();
+            $table->string('report_territory')->nullable();
+            $table->string('report_tso')->nullable();
+            $table->string('report_town')->nullable();
+            $table->string('report_spo')->nullable();
+            $table->string('report_db')->nullable();
             $table->timestamps();
         });
     }

@@ -22,6 +22,7 @@ Route::get('/', function () {
 });
 Route::resource('hierarchy', HierarchyController::class);
 Route::resource('report', ReportController::class);
+Route::get('report/create/dbpoint/{id}', [ReportController::class, '']);
 Route::get('/reportpdf', [PDFController::class ,'generatePDF']);
 Route::get('/getspos/{parent_code}', [ReportController::class, 'getSpoList']);
 Route::get('/getsposdynamic/{parent_code}', [ReportController::class, 'fetch'])->name('getsposdynamic.fetch');
