@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-success">Submit Report</button>
+        <button type="submit" class="btn btn-lg btn-success">Next <i class="fas fa-chevron-circle-right"></i></button>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
