@@ -27,6 +27,15 @@ Route::get('/reportpdf', [PDFController::class ,'generatePDF']);
 Route::get('/getspos/{parent_code}', [ReportController::class, 'getSpoList']);
 Route::get('/getsposdynamic/{parent_code}', [ReportController::class, 'fetch'])->name('getsposdynamic.fetch');
 Route::get('/report/create/step2/{id}', [ReportController::class, 'step2show'])->name('step2show');
+Route::get('/report/create/dbinfo/{id}', [ReportController::class, 'inputdbinfo'])->name('inputdbinfo');
+Route::post('/report/create/dbinfo/{id}', [ReportController::class, 'inputdbinfostore'])->name('dbpoint.store');
+Route::get('/report/create/areareview/{id}', [ReportController::class, 'areareview'])->name('areareview');
+Route::post('/report/create/areareview/{id}', [ReportController::class, 'areareviewstore'])->name('areareview.store');
+Route::get('/report/create/marketwork/{id}', [ReportController::class, 'marketwork'])->name('marketwork');
+Route::post('/report/create/marketwork/{id}', [ReportController::class, 'marketworkstore'])->name('marketwork.store');
+Route::get('/report/create/agreedaction/{id}', [ReportController::class, 'agreedaction'])->name('agreedaction');
+Route::post('/report/create/agreedaction/{id}', [ReportController::class, 'agreedactionstore'])->name('agreedaction.store');
+
 
 //Route::get('upload_tab_csv', [AlltabsController::class ,'create']);
 //Route::post('upload_tab_csv', [AlltabsController::class ,'store']);

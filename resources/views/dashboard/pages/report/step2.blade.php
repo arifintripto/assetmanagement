@@ -10,6 +10,7 @@
         <li class="breadcrumb-item active">Create New Report</li>
     </ol>
 
+
 {{--    <table class="table table-bordered">--}}
 {{--        <tbody>--}}
 {{--        <tr>--}}
@@ -34,31 +35,37 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th  colspan="6"><strong>Daily Field Visit Report</strong></th>
+            <th  colspan="4"><strong>Daily Field Visit Report</strong></th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td colspan="3"><strong>Date: </strong>{{ $newDate = date("d F, Y", strtotime($data->report_date))  }}</td>
-            <td colspan="3"><strong>RSM/ASM: </strong>{{ $data->report_asm_rsm }}</td>
+            <td colspan="2"><strong>Date: </strong>{{ $newDate = date("d F, Y", strtotime($data['report']->report_date))  }}</td>
+            <td colspan="2"><strong>RSM/ASM: </strong>{{ $data['hierarchy']['rsm']->name }}</td>
         </tr>
         <tr>
-            <th colspan="6"><strong>Visit Location Details</strong></th>
+            <th colspan="4"><strong>Visit Location Details</strong></th>
         </tr>
         <tr>
-            <td colspan="3"><strong>Area: </strong>{{ $area = str_replace('_', ' ', $hierarchy['asm']->area) }}</td>
-            <td colspan="3"><strong>ASM: </strong>{{ $hierarchy['asm']->name }}</td>
+            <td colspan="2"><strong>Area: </strong>{{ $area = str_replace('_', ' ', $data['hierarchy']['asm']->area) }}</td>
+            <td colspan="2"><strong>ASM: </strong>{{ $data['hierarchy']['asm']->name }}</td>
         </tr>
         <tr>
-            <td colspan="3"><strong>Territory: </strong>{{ $hierarchy['tso']->area }}</td>
-            <td colspan="3"><strong>TSO: </strong>{{ $hierarchy['tso']->name }}</td>
+            <td colspan="2"><strong>Territory: </strong>{{ $data['hierarchy']['tso']->area }}</td>
+            <td colspan="2"><strong>TSO: </strong>{{ $data['hierarchy']['tso']->name }}</td>
         </tr>
         <tr>
-            <td colspan="3"><strong>Town: </strong>{{ $hierarchy['db']->area }}</td>
-            <td colspan="3"><strong>SPO: </strong>{{ $data->report_spo }}</td>
+            <td colspan="2"><strong>Town: </strong>{{ $data['hierarchy']['db']->area }}</td>
+            <td colspan="2"><strong>SPO: </strong>{{ $data['report']->report_spo }}</td>
         </tr>
         <tr>
-            <td colspan="6"><strong>DB: </strong>{{ $hierarchy['db']->name }}</td>
+            <td colspan="4"><strong>DB: </strong>{{ $data['hierarchy']['db']->name }}</td>
+        </tr>
+        <tr style="text-align: center">
+            <td colspan="1"><a href="{{ route('inputdbinfo', ['id'=> $data['id']]) }}" class="btn btn-success">DB Point Review</a></td>
+            <td colspan="1"><a href="{{ route('areareview', ['id'=> $data['id']]) }}" class="btn btn-success">Area/Territory Overview</a></td>
+            <td colspan="1"><a href="{{ route('marketwork', ['id'=> $data['id']]) }}" class="btn btn-success">Market Work With</a></td>
+            <td colspan="1"><a href="{{ route('agreedaction', ['id'=> $data['id']]) }}" class="btn btn-success">Agreed Action Points</a></td>
         </tr>
         </tbody>
     </table>
