@@ -18,7 +18,7 @@ class PDFController extends Controller
 //            ->join('areaterritoryoverview', 'reports.id', '=', 'areaterritoryoverview.area_report_id')
 //            ->join('marketworkwith', 'reports.id', '=', 'marketworkwith.market_report_id')
 //            ->join('agreedactionpoints', 'reports.id', '=', 'agreedactionpoints.agreed_report_id')
-            ->where('reports.id', '=', 4)
+            ->where('reports.id', '=', 2)
             ->first();
 //        dd($data->report_db);
 

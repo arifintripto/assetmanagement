@@ -17,11 +17,6 @@ class CreateReportsTable extends Migration
             $table->id();
             $table->string('report_date')->nullable();
             $table->boolean('report_asm_rsm')->default(1)->nullable();
-            $table->string('report_area')->nullable();
-            $table->string('report_asm')->nullable();
-            $table->string('report_territory')->nullable();
-            $table->string('report_tso')->nullable();
-            $table->string('report_town')->nullable();
             $table->string('report_spo')->nullable();
             $table->string('report_db')->nullable();
             $table->timestamps();

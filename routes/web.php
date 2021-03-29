@@ -26,6 +26,7 @@ Route::get('report/create/dbpoint/{id}', [ReportController::class, '']);
 Route::get('/reportpdf', [PDFController::class ,'generatePDF']);
 Route::get('/getspos/{parent_code}', [ReportController::class, 'getSpoList']);
 Route::get('/getsposdynamic/{parent_code}', [ReportController::class, 'fetch'])->name('getsposdynamic.fetch');
+Route::get('/report/create/step2/{id}', [ReportController::class, 'step2show'])->name('step2show');
 
 //Route::get('upload_tab_csv', [AlltabsController::class ,'create']);
 //Route::post('upload_tab_csv', [AlltabsController::class ,'store']);

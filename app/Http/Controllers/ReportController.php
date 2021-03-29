@@ -9,6 +9,32 @@ use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
+    public function step2show($id) {
+
+
+        $data = DB::table('reports')
+            ->where('reports.id', '=', $id)
+            ->first();
+
+        $db = DB::table('hierarchies')
+            ->where('code', '=', $data->report_db)->get();
+        $tso = DB::table('hierarchies')
+            ->where('code','=', $db[0]->parent_code)->get();
+        $asm = DB::table('hierarchies')
+            ->where('code','=', $tso[0]->parent_code)->get();
+
+        $hierarchy = array([
+            'db' =>$db[0],
+            'tso'=>$tso[0],
+            'asm'=>$asm[0]
+        ]);
+        $hierarchy = $hierarchy[0];
+
+//        dd($hierarchy);
+
+        return view('dashboard.pages.report.step2', compact('hierarchy', 'data'));
+
+    }
 
     /**
      * Display a listing of the resource.
@@ -59,31 +85,19 @@ class ReportController extends Controller
     {
         $db = DB::table('hierarchies')
             ->where('code', '=', \request('report_db'))->get();
+        $db = $db[0];
 //        $tso = DB::table('hierarchies')
 //            ->where('code','=', $db[0]->parent_code)->get();
 //        $asm = DB::table('hierarchies')
 //            ->where('code','=', $tso[0]->parent_code)->get();
 
 
-//        dd();
-
-
-
-        $validated = \request()->validate([
-            'report_date' => '',
-            'report_asm_rsm' => '',
-            'report_area' => '',
-            'report_asm' => '',
-            'report_territory' => '',
-            'report_tso' => '',
-            'report_town' => '',
-            'report_spo' => '',
-            'report_db' => ''
-        ]);
-        DB::table('reports')->updateOrInsert([
+        DB::table('reports')->insert([
             'report_date'=> Carbon::today()->toDateString(),
-            'report_db' => $db[0]->code
+            'report_db' => $db->code
         ]);
+
+        $id = DB::table('reports')->pluck('id')->last();
 
 
 //        DB::table('dbpointreview')->updateOrInsert(\request()->validate([
@@ -169,7 +183,7 @@ class ReportController extends Controller
 //            'other_timeline' => ''
 //        ]));
 
-        return view('dashboard.pages.report.dbpoint');
+        return redirect()->route('step2show', ['id'=>$id]);
     }
 
     /**
