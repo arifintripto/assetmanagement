@@ -103,6 +103,10 @@
         text-align: left;
         vertical-align: top
     }
+    .tg .tg-bb99 {
+        text-align: center;
+        vertical-align: top
+    }
 </style>
 <table class="tg" style="margin-top: 20px">
     <thead>
@@ -118,7 +122,7 @@
     <tr>
         <td class="tg-amwm">1</td>
         <td class="tg-0lax">Stock Kept in cool areas away from direct sunlight</td>
-        <td class="tg-0lax text-center">
+        <td class="tg-bb99 text-center">
             @if( $data->cool_area_compliance == 2 )
                 No
             @elseif( $data->cool_area_compliance == 1 )
@@ -131,7 +135,7 @@
     <tr>
         <td class="tg-amwm">2</td>
         <td class="tg-0lax">Stock in dry place away from moisture</td>
-        <td class="tg-0lax text-center">
+        <td class="tg-bb99 text-center">
             @if( $data->dry_place_compliance == 2 )
                 No
             @elseif( $data->dry_place_compliance == 1 )
@@ -144,7 +148,7 @@
     <tr>
         <td class="tg-amwm">3</td>
         <td class="tg-0lax">Premises free from dirt &amp; cobwebs</td>
-        <td class="tg-0lax text-center">
+        <td class="tg-bb99 text-center">
             @if( $data->free_from_dirt_cobwebs_compliance == 2 )
                 No
             @elseif( $data->free_from_dirt_cobwebs_compliance == 1 )
@@ -157,7 +161,7 @@
     <tr>
         <td class="tg-amwm">4</td>
         <td class="tg-0lax">Stock away from strong smelling items</td>
-        <td class="tg-0lax text-center">
+        <td class="tg-bb99 text-center">
             @if( $data->away_from_smell_compliance == 2 )
                 No
             @elseif( $data->away_from_smell_compliance == 1 )
@@ -170,7 +174,7 @@
     <tr>
         <td class="tg-amwm">5</td>
         <td class="tg-0lax">FIFO maintained even within single SKU</td>
-        <td class="tg-0lax text-center">
+        <td class="tg-bb99 text-center">
             @if( $data->fifo_maintained_compliance == 2 )
                 No
             @elseif( $data->fifo_maintained_compliance == 1 )
@@ -183,7 +187,7 @@
     <tr>
         <td class="tg-amwm">6</td>
         <td class="tg-0lax">Pets control program organized in last 6 months</td>
-        <td class="tg-0lax text-center">
+        <td class="tg-bb99 text-center">
             @if( $data->pets_control_in6months_compliance == 2 )
                 No
             @elseif( $data->pets_control_in6months_compliance == 1 )
@@ -196,7 +200,7 @@
     <tr>
         <td class="tg-amwm">7</td>
         <td class="tg-0lax">Stock recommended height</td>
-        <td class="tg-0lax text-center">
+        <td class="tg-bb99 text-center">
             @if( $data->recommended_height_compliance == 2 )
                 No
             @elseif( $data->recommended_height_compliance == 1 )
@@ -209,7 +213,7 @@
     <tr>
         <td class="tg-amwm">8</td>
         <td class="tg-0lax">Storage area proper illuminated</td>
-        <td class="tg-0lax text-center">
+        <td class="tg-bb99 text-center">
             @if( $data->proper_illiminated_compliance == 2 )
                 No
             @elseif( $data->proper_illiminated_compliance == 1 )
@@ -222,7 +226,7 @@
     <tr>
         <td class="tg-amwm">9</td>
         <td class="tg-0lax">Segregated storage area from expired &amp; damage product</td>
-        <td class="tg-0lax text-center">
+        <td class="tg-bb99 text-center">
             @if( $data->sagregated_from_expired_dmg_compliance == 2 )
                 No
             @elseif( $data->sagregated_from_expired_dmg_compliance == 1 )
@@ -235,7 +239,7 @@
     <tr>
         <td class="tg-amwm">10</td>
         <td class="tg-0lax">Sign put up declaring "DAMAGED STOCK. NOT FOR SALE" next to stales area</td>
-        <td class="tg-0lax text-center">
+        <td class="tg-bb99 text-center">
             @if( $data->sign_put_up_compliance == 2 )
                 No
             @elseif( $data->sign_put_up_compliance == 1 )
@@ -248,7 +252,7 @@
     <tr>
         <td class="tg-amwm">11</td>
         <td class="tg-0lax">No exception on loading receipt quality</td>
-        <td class="tg-0lax text-center">
+        <td class="tg-bb99 text-center">
             @if( $data->loading_receipt_quality_compliance == 2 )
                 No
             @elseif( $data->loading_receipt_quality_compliance == 1 )

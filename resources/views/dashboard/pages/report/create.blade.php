@@ -1,7 +1,6 @@
 @extends('dashboard.layout.master')
 @extends('dashboard.layout.layout')
 
-
 @section('content')
     <h2 class="mt-4">Create New Report</h2>
     <ol class="breadcrumb mb-4">
@@ -18,8 +17,8 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="report_db">Distribution</label>
-                        <select class="custom-select custom-select-md mb-3 dynamic" id="report_db" name="report_db" data-dependent="report_spo">
-                            <option selected disabled>Select Distribution</option>
+                        <select class="custom-select custom-select-md mb-3 dynamic" id="report_db" name="report_db" required>
+                            <option value="" >Select Distribution</option>
                             @foreach( $dbs as $db)
                                 <option value="{{ $db->code }}">{{ $db->code }} - {{ $db->name }}</option>
                             @endforeach
@@ -50,11 +49,6 @@
                 {{ session()->get('message') }}
             </div>
         @endif
-
-
     </form>
-
-{{--    <a href="#" class="btn btn-success">DB Point</a>--}}
-
 
 @endsection
