@@ -144,7 +144,9 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-success">Submit Report</button>
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-success btn-lg mt-4">Next <i class="fas fa-chevron-circle-right"></i></button>
+        </div>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>

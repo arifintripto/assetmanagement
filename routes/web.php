@@ -22,10 +22,8 @@ Route::get('/', function () {
 });
 Route::resource('hierarchy', HierarchyController::class);
 Route::resource('report', ReportController::class);
-Route::get('report/create/dbpoint/{id}', [ReportController::class, '']);
-Route::get('/reportpdf', [PDFController::class ,'generatePDF']);
-Route::get('/getspos/{parent_code}', [ReportController::class, 'getSpoList']);
-Route::get('/getsposdynamic/{parent_code}', [ReportController::class, 'fetch'])->name('getsposdynamic.fetch');
+Route::get('/reportpdf/{id}', [PDFController::class ,'generatePDF'])->name('getpdf');
+Route::get('/godown_report/{id}', [PDFController::class ,'godown_maintenance_pdf'])->name('godown_report');
 Route::get('/report/create/step2/{id}', [ReportController::class, 'step2show'])->name('step2show');
 Route::get('/report/create/dbinfo/{id}', [ReportController::class, 'inputdbinfo'])->name('inputdbinfo');
 Route::post('/report/create/dbinfo/{id}', [ReportController::class, 'inputdbinfostore'])->name('dbpoint.store');
@@ -35,6 +33,8 @@ Route::get('/report/create/marketwork/{id}', [ReportController::class, 'marketwo
 Route::post('/report/create/marketwork/{id}', [ReportController::class, 'marketworkstore'])->name('marketwork.store');
 Route::get('/report/create/agreedaction/{id}', [ReportController::class, 'agreedaction'])->name('agreedaction');
 Route::post('/report/create/agreedaction/{id}', [ReportController::class, 'agreedactionstore'])->name('agreedaction.store');
+Route::get('/report/create/godown/{id}', [ReportController::class, 'godown'])->name('godown');
+Route::post('/report/create/godown/{id}', [ReportController::class, 'godownstore'])->name('godown.store');
 
 
 //Route::get('upload_tab_csv', [AlltabsController::class ,'create']);

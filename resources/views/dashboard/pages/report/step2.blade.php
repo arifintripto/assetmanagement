@@ -10,23 +10,6 @@
         <li class="breadcrumb-item active">Create New Report</li>
     </ol>
 
-
-{{--    <table class="table table-bordered">--}}
-{{--        <tbody>--}}
-{{--        <tr>--}}
-{{--            <th scope="row">1</th>--}}
-{{--            <td>Mark</td>--}}
-{{--            <td>Otto</td>--}}
-{{--            <td>@mdo</td>--}}
-{{--        </tr>--}}
-{{--        <tr>--}}
-{{--            <th scope="row">2</th>--}}
-{{--            <td>Jacob</td>--}}
-{{--            <td>Thornton</td>--}}
-{{--            <td>@fat</td>--}}
-{{--        </tr>--}}
-{{--        </tbody>--}}
-{{--    </table>--}}
     <style>
         th {
             text-align: center;
@@ -61,14 +44,23 @@
         <tr>
             <td colspan="4"><strong>DB: </strong>{{ $data['hierarchy']['db']->name }}</td>
         </tr>
-        <tr style="text-align: center">
-            <td colspan="1"><a href="{{ route('inputdbinfo', ['id'=> $data['id']]) }}" class="btn btn-success">DB Point Review</a></td>
-            <td colspan="1"><a href="{{ route('areareview', ['id'=> $data['id']]) }}" class="btn btn-success">Area/Territory Overview</a></td>
-            <td colspan="1"><a href="{{ route('marketwork', ['id'=> $data['id']]) }}" class="btn btn-success">Market Work With</a></td>
-            <td colspan="1"><a href="{{ route('agreedaction', ['id'=> $data['id']]) }}" class="btn btn-success">Agreed Action Points</a></td>
-        </tr>
         </tbody>
     </table>
+
+    @if(isset($data['report_btn']))
+        <div class="col-md-12">
+            <div class="text-center">
+                <a href="{{ route('getpdf', ['id'=> $data['id']]) }}" class="btn btn-success btn-lg mt-4" target="_blank">Field Visit Report <i class="fas fa-chevron-circle-right"></i></a>
+                <a href="{{ route('godown_report', ['id'=> $data['id']]) }}" class="btn btn-success btn-lg mt-4" target="_blank">DB Godown Maintenance Monitor <i class="fas fa-chevron-circle-right"></i></a>
+            </div>
+        </div>
+    @else
+        <div class="col-md-12">
+            <div class="text-center">
+                <a href="{{ route('inputdbinfo', ['id'=> $data['id']]) }}" class="btn btn-success btn-lg mt-4">Next <i class="fas fa-chevron-circle-right"></i></a>
+            </div>
+        </div>
+    @endif
 
 
 @endsection

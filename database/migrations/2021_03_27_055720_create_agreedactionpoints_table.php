@@ -15,7 +15,7 @@ class CreateAgreedactionpointsTable extends Migration
     {
         Schema::create('agreedactionpoints', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('agreed_report_id')->default(1);
+            $table->bigInteger('agreed_report_id')->nullable();
             $table->string('db_point_actions_agreed')->nullable();
             $table->integer('db_point_responsibility')->nullable();
             $table->date('db_point_timeline')->nullable();

@@ -15,7 +15,7 @@ class CreateMarketworkwithTable extends Migration
     {
         Schema::create('marketworkwith', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('market_report_id')->default(1);
+            $table->bigInteger('market_report_id')->nullable();
             $table->string('market_beat_visited')->nullable();
             $table->decimal('market_daily_avg')->nullable();
             $table->decimal('market_day_tgt')->nullable();

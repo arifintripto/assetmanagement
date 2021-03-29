@@ -9,10 +9,9 @@
         <li class="breadcrumb-item"><a href="{{ route('report.index') }}">Report</a></li>
         <li class="breadcrumb-item active">Create New Report</li>
     </ol>
+
     <form class="col-md-12 mb-5" method="POST" action="{{ route('dbpoint.store', ['id' => $id]) }}">
         @csrf
-
-
         <div class="card mb-4">
             <div class="card-body">
                 <h5 class="card-title">DB Point Review</h5>
@@ -202,8 +201,10 @@
             </div>
         </div>
 
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-success btn-lg mt-4">Next <i class="fas fa-chevron-circle-right"></i></button>
+        </div>
 
-        <button type="submit" class="btn btn-success">Submit Report</button>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>

@@ -15,7 +15,7 @@ class CreateDbpointreviewTable extends Migration
     {
         Schema::create('dbpointreview', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('db_report_id')->default(1);
+            $table->bigInteger('db_report_id')->nullable();
             $table->decimal('db_avg_sale')->nullable();
             $table->decimal('db_ytd_gr_percent')->nullable();
             $table->decimal('db_month_target')->nullable();

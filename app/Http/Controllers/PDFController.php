@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-//use Barryvdh\DomPDF\PDF;
 use Barryvdh\DomPDF\Facade as PDF;
-use App\Models\Report;
 use Illuminate\Support\Facades\DB;
 
 class PDFController extends Controller
 {
-    public function generatePDF()
+    public function generatePDF($id)
     {
 
         $data = DB::table('reports')
@@ -18,9 +15,8 @@ class PDFController extends Controller
             ->join('areaterritoryoverview', 'reports.id', '=', 'areaterritoryoverview.area_report_id')
             ->join('marketworkwith', 'reports.id', '=', 'marketworkwith.market_report_id')
             ->join('agreedactionpoints', 'reports.id', '=', 'agreedactionpoints.agreed_report_id')
-            ->where('reports.id', '=', 13)
+            ->where('reports.id', '=', $id)
             ->first();
-
 
         $db = DB::table('hierarchies')
             ->where('code', '=', $data->report_db)->get();
@@ -44,4 +40,12 @@ class PDFController extends Controller
 
         return $pdf->stream('Report.pdf');
     }
+
+    public function godown_maintenance_pdf($id) {
+        $pdf = PDF::loadView('dashboard.layout.godown_maintenance')->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Godown_Maintenance.pdf');
+    }
+
+
 }

@@ -12,6 +12,7 @@ class ReportController extends Controller
 
     public function step2show($id) {
 
+
         $report = DB::table('reports')
             ->where('id', '=', $id)
             ->first();
@@ -32,14 +33,31 @@ class ReportController extends Controller
         ]);
         $hierarchy = $hierarchy[0];
 
-        $data = array([
-            'hierarchy' => $hierarchy,
-            'report' => $report,
-            'id' => $id
-        ]);
-        $data = $data[0];
+        $report_btn = DB::table('godownmaintenance')->where('godown_report_id','=', $id)->pluck('id');
+//        dd($report_btn[0]);
 
-        return view('dashboard.pages.report.step2', compact('data'));
+        if (!isset($report_btn[0])) {
+            $data = array([
+                'hierarchy' => $hierarchy,
+                'report' => $report,
+                'id' => $id
+            ]);
+            $data = $data[0];
+
+            return view('dashboard.pages.report.step2', compact('data'));
+        }
+        else {
+            $data = array([
+                'hierarchy' => $hierarchy,
+                'report' => $report,
+                'id' => $id,
+                'report_btn' => $report_btn[0]
+            ]);
+            $data = $data[0];
+
+            return view('dashboard.pages.report.step2', compact('data'));
+        }
+
     }
 
     public function inputdbinfo($id) {
@@ -172,7 +190,66 @@ class ReportController extends Controller
             'other_timeline' => \request('other_timeline')
         ]);
 
-        return redirect('/');
+        return redirect(route('godown', ['id'=>$id]));
+    }
+
+    public function godown($id) {
+
+        return view('dashboard.pages.report.godown_maintenance', compact('id'));
+
+    }
+
+    public function godownstore($id) {
+
+        DB::table('godownmaintenance')->insert([
+        'godown_report_id' => $id,
+        'cool_area_compliance' => \request('cool_area_compliance'),
+        'cool_area_comments' => \request('cool_area_comments'),
+        'cool_area_corrective_action' => \request('cool_area_corrective_action'),
+        'cool_area_corrective_date' => \request('cool_area_corrective_date'),
+        'dry_place_compliance' => \request('dry_place_compliance'),
+        'dry_place_comments' => \request('dry_place_comments'),
+        'dry_place_corrective_action' => \request('dry_place_corrective_action'),
+        'dry_place_corrective_date' => \request('dry_place_corrective_date'),
+        'free_from_dirt_cobwebs_compliance' => \request('free_from_dirt_cobwebs_compliance'),
+        'free_from_dirt_cobwebs_comments' => \request('free_from_dirt_cobwebs_comments'),
+        'free_from_dirt_cobwebs_corrective_action' => \request('free_from_dirt_cobwebs_corrective_action'),
+        'free_from_dirt_cobwebs_corrective_date' => \request('free_from_dirt_cobwebs_corrective_date'),
+        'away_from_smell_compliance' => \request('away_from_smell_compliance'),
+        'away_from_smell_comments' => \request('away_from_smell_comments'),
+        'away_from_smell_corrective_action' => \request('away_from_smell_corrective_action'),
+        'away_from_smell_corrective_date' => \request('away_from_smell_corrective_date'),
+        'fifo_maintained_compliance' => \request('fifo_maintained_compliance'),
+        'fifo_maintained_comments' => \request('fifo_maintained_comments'),
+        'fifo_maintained_corrective_action' => \request('fifo_maintained_corrective_action'),
+        'fifo_maintained_corrective_date' => \request('fifo_maintained_corrective_date'),
+        'pets_control_in6months_compliance' => \request('pets_control_in6months_compliance'),
+        'pets_control_in6months_comments' => \request('pets_control_in6months_comments'),
+        'pets_control_in6months_corrective_action' => \request('pets_control_in6months_corrective_action'),
+        'pets_control_in6months_corrective_date' => \request('pets_control_in6months_corrective_date'),
+        'recommended_height_compliance' => \request('recommended_height_compliance'),
+        'recommended_height_comments' => \request('recommended_height_comments'),
+        'recommended_height_corrective_action' => \request('recommended_height_corrective_action'),
+        'recommended_height_corrective_date' => \request('recommended_height_corrective_date'),
+        'proper_illiminated_compliance' => \request('proper_illiminated_comments'),
+        'proper_illiminated_comments' => \request('proper_illiminated_comments'),
+        'proper_illiminated_corrective_action' => \request('proper_illiminated_corrective_action'),
+        'proper_illiminated_corrective_date' => \request('proper_illiminated_corrective_date'),
+        'sagregated_from_expired_dmg_compliance' => \request('sagregated_from_expired_dmg_compliance'),
+        'sagregated_from_expired_dmg_comments' => \request('sagregated_from_expired_dmg_comments'),
+        'sagregated_from_expired_dmg_corrective_action' => \request('sagregated_from_expired_dmg_corrective_action'),
+        'sagregated_from_expired_dmg_corrective_date' => \request('sagregated_from_expired_dmg_corrective_date'),
+        'sign_put_up_compliance' => \request('sign_put_up_compliance'),
+        'sign_put_up_comments' => \request('sign_put_up_comments'),
+        'sign_put_up_corrective_action' => \request('sign_put_up_corrective_action'),
+        'sign_put_up_corrective_date' => \request('sign_put_up_corrective_date'),
+        'loading_receipt_quality_compliance' => \request('loading_receipt_quality_compliance'),
+        'loading_receipt_quality_comments' => \request('loading_receipt_quality_comments'),
+        'loading_receipt_quality_corrective_action' => \request('loading_receipt_quality_corrective_action'),
+        'loading_receipt_quality_corrective_date' => \request('loading_receipt_quality_corrective_date'),
+        ]);
+
+        return redirect()->route('step2show', ['id'=>$id]);
     }
 
     /**

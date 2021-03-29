@@ -15,7 +15,7 @@ class CreateAreaterritoryoverviewTable extends Migration
     {
         Schema::create('areaterritoryoverview', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('area_report_id')->default(1);
+            $table->bigInteger('area_report_id')->nullable();
             $table->decimal('area_avg_sale')->nullable();
             $table->decimal('area_ytd_gr_percent')->nullable();
             $table->decimal('area_month_target')->nullable();

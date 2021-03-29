@@ -25,7 +25,7 @@
             font-family: Arial, sans-serif;
             font-size: 10px;
             overflow: hidden;
-            padding: 2px 10px;
+            padding: 2px 5px;
             word-break: normal;
 
         }
@@ -38,7 +38,7 @@
             font-size: 10px;
             font-weight: normal;
             overflow: hidden;
-            padding: 2px 10px;
+            padding: 2px 5px;
             word-break: normal;
         }
 
