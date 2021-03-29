@@ -18,7 +18,7 @@ use App\Http\Controllers\PDFController;
 */
 
 Route::get('/', function () {
-    return view('dashboard.pages.dashboard.index');
+    return redirect(\route('report.create'));
 });
 Route::resource('hierarchy', HierarchyController::class);
 Route::resource('report', ReportController::class);

@@ -10,7 +10,7 @@
         <li class="breadcrumb-item active">Create New Report</li>
     </ol>
 
-    <form class="col-md-12 mb-5" method="POST" action="{{ route('agreedaction.store', ['id' => $id]) }}" target="_blank">
+    <form class="col-md-12 mb-5" method="POST" action="{{ route('agreedaction.store', ['id' => $id]) }}">
         @csrf
 
         <table class="table table-striped table-bordered">
@@ -215,7 +215,7 @@
         </table>
 
         <div class="col-md-12 text-center">
-            <button type="submit" class="btn btn-success btn-lg mt-4" >See Report <i class="far fa-file-alt"></i></button>
+            <button type="submit" class="btn btn-success btn-lg mt-4">Next <i class="fas fa-chevron-circle-right"></i></button>
         </div>
         @if ($errors->any())
             <div class="alert alert-danger">
