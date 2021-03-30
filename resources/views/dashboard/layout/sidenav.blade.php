@@ -7,7 +7,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Create Report
                 </a>
-                <a class="nav-link" href="/hierarchy">
+                <a class="nav-link" href="{{ route('hierarchy.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-sitemap"></i></div>
                     Hierarchy
                 </a>
@@ -19,3 +19,4 @@
         </div>
     </nav>
 </div>
+

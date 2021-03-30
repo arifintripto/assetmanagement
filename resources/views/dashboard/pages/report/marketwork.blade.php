@@ -10,7 +10,7 @@
         <li class="breadcrumb-item active">Create New Report</li>
     </ol>
 
-    <form class="col-md-12 mb-5" method="POST" action="{{ route('marketwork.store', ['id' => $id]) }}">
+    <form class="mb-5" method="POST" action="{{ route('marketwork.store', ['id' => $id]) }}">
         @csrf
         <div class="card mb-4">
             <div class="card-body">
@@ -144,7 +144,7 @@
             </div>
         </div>
 
-        <div class="col-md-12 text-center">
+        <div class="text-center">
             <button type="submit" class="btn btn-success btn-lg mt-4">Next <i class="fas fa-chevron-circle-right"></i></button>
         </div>
         @if ($errors->any())

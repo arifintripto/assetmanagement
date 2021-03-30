@@ -3,14 +3,14 @@
 
 
 @section('content')
-    <h2 class="mt-4">Create New Report</h2>
+    <h2 class="mt-4">Actions Agreed</h2>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('report.index') }}">Report</a></li>
-        <li class="breadcrumb-item active">Create New Report</li>
+        <li class="breadcrumb-item active">Actions Agreed</li>
     </ol>
 
-    <form class="col-md-12 mb-5" method="POST" action="{{ route('agreedaction.store', ['id' => $id]) }}">
+    <form class="mb-5" method="POST" action="{{ route('agreedaction.store', ['id' => $id]) }}">
         @csrf
 
         <table class="table table-striped table-bordered">
@@ -215,7 +215,7 @@
         </table>
 
         <div class="col-md-12 text-center">
-            <button type="submit" class="btn btn-success btn-lg mt-4">Next <i class="fas fa-chevron-circle-right"></i></button>
+            <button type="submit" class="btn btn-success btn-lg mt-4 mb-4">Next <i class="fas fa-chevron-circle-right"></i></button>
         </div>
         @if ($errors->any())
             <div class="alert alert-danger">

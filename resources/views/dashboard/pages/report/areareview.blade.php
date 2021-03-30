@@ -10,7 +10,7 @@
         <li class="breadcrumb-item active">Create New Report</li>
     </ol>
 
-    <form class="col-md-12 mb-5" method="POST" action="{{ route('areareview.store', ['id' => $id]) }}">
+    <form class="mb-5" method="POST" action="{{ route('areareview.store', ['id' => $id]) }}">
         @csrf
 
 
@@ -148,8 +148,8 @@
         </div>
 
 
-        <div class="col-md-12 text-center">
-            <button type="submit" class="btn btn-success btn-lg mt-4">Next <i class="fas fa-chevron-circle-right"></i></button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success btn-lg mt-4 mb-4">Next <i class="fas fa-chevron-circle-right"></i></button>
         </div>
         @if ($errors->any())
             <div class="alert alert-danger">

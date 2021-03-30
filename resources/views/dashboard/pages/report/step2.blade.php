@@ -48,16 +48,16 @@
     </table>
 
     @if(isset($data['report_btn']))
-        <div class="col-md-12">
+        <div class="">
             <div class="text-center">
-                <a href="{{ route('getpdf', ['id'=> $data['id']]) }}" class="btn btn-success btn-lg mt-4" target="_blank">Field Visit Report <i class="fas fa-chevron-circle-right"></i></a>
-                <a href="{{ route('godown_report', ['id'=> $data['id']]) }}" class="btn btn-success btn-lg mt-4" target="_blank">DB Godown Maintenance Monitor <i class="fas fa-chevron-circle-right"></i></a>
+                <a href="{{ route('getpdf', ['id'=> $data['id']]) }}" class="btn btn-success mt-4 mb-4" target="_blank">Field Visit Report <i class="fas fa-chevron-circle-right"></i></a>
+                <a href="{{ route('godown_report', ['id'=> $data['id']]) }}" class="btn btn-success mt-4 mb-4" target="_blank">DB Godown Maintenance Monitor <i class="fas fa-chevron-circle-right"></i></a>
             </div>
         </div>
     @else
-        <div class="col-md-12">
+        <div class="">
             <div class="text-center">
-                <a href="{{ route('inputdbinfo', ['id'=> $data['id']]) }}" class="btn btn-success btn-lg mt-4">Next <i class="fas fa-chevron-circle-right"></i></a>
+                <a href="{{ route('inputdbinfo', ['id'=> $data['id']]) }}" class="btn btn-success btn-lg mt-4 mb-4">Next <i class="fas fa-chevron-circle-right"></i></a>
             </div>
         </div>
     @endif
