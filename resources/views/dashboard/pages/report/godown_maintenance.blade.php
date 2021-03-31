@@ -28,11 +28,12 @@
                 <td class="tg-amwm">1</td>
                 <td class="tg-0lax">Stock Kept in cool areas away from direct sunlight</td>
                 <td class="tg-0lax">
-                    <select class="custom-select custom-select-md mb-3" id="cool_area_compliance"
+                    <select class="custom-select custom-select-md mb-3 @error('cool_area_compliance') is-invalid @enderror"
+                            id="cool_area_compliance"
                             name="cool_area_compliance">
-                        <option selected disabled>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="">Select</option>
+                        <option value="1" {{ old('cool_area_compliance')=='1' ? 'selected' : ''  }}>Yes</option>
+                        <option value="2" {{ old('cool_area_compliance')=='2' ? 'selected' : ''  }}>No</option>
                     </select>
                 </td>
                 <td class="tg-0lax">
@@ -55,11 +56,12 @@
                 <td class="tg-amwm">2</td>
                 <td class="tg-0lax">Stock in dry place away from moisture</td>
                 <td class="tg-0lax">
-                    <select class="custom-select custom-select-md mb-3" id="dry_place_compliance"
+                    <select class="custom-select custom-select-md mb-3 @error('dry_place_compliance') is-invalid @enderror"
+                            id="dry_place_compliance"
                             name="dry_place_compliance">
-                        <option selected disabled>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="">Select</option>
+                        <option value="1" {{ old('dry_place_compliance')=='1' ? 'selected' : ''  }}>Yes</option>
+                        <option value="2" {{ old('dry_place_compliance')=='2' ? 'selected' : ''  }}>No</option>
                     </select>
                 </td>
                 <td class="tg-0lax">
@@ -81,11 +83,12 @@
                 <td class="tg-amwm">3</td>
                 <td class="tg-0lax">Premises free from dirt &amp; cobwebs</td>
                 <td class="tg-0lax">
-                    <select class="custom-select custom-select-md mb-3" id="free_from_dirt_cobwebs_compliance"
-                                            name="free_from_dirt_cobwebs_compliance">
-                        <option selected disabled>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                    <select class="custom-select custom-select-md mb-3 @error('free_from_dirt_cobwebs_compliance') is-invalid @enderror"
+                            id="free_from_dirt_cobwebs_compliance"
+                            name="free_from_dirt_cobwebs_compliance">
+                        <option value="">Select</option>
+                        <option value="1" {{ old('free_from_dirt_cobwebs_compliance')=='1' ? 'selected' : ''  }}>Yes</option>
+                        <option value="2" {{ old('free_from_dirt_cobwebs_compliance')=='2' ? 'selected' : ''  }}>No</option>
                     </select>
                 </td>
                 <td class="tg-0lax">
@@ -107,11 +110,12 @@
                 <td class="tg-amwm">4</td>
                 <td class="tg-0lax">Stock away from strong smelling items</td>
                 <td class="tg-0lax">
-                    <select class="custom-select custom-select-md mb-3" id="away_from_smell_compliance"
+                    <select class="custom-select custom-select-md mb-3 @error('away_from_smell_compliance') is-invalid @enderror"
+                            id="away_from_smell_compliance"
                             name="away_from_smell_compliance">
-                        <option selected disabled>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="">Select</option>
+                        <option value="1" {{ old('away_from_smell_compliance')=='1' ? 'selected' : ''  }}>Yes</option>
+                        <option value="2" {{ old('away_from_smell_compliance')=='2' ? 'selected' : ''  }}>No</option>
                     </select>
                 </td>
                 <td class="tg-0lax">
@@ -133,11 +137,12 @@
                 <td class="tg-amwm">5</td>
                 <td class="tg-0lax">FIFO maintained even within single SKU</td>
                 <td class="tg-0lax">
-                    <select class="custom-select custom-select-md mb-3" id="fifo_maintained_compliance"
+                    <select class="custom-select custom-select-md mb-3 @error('fifo_maintained_compliance') is-invalid @enderror"
+                            id="fifo_maintained_compliance"
                             name="fifo_maintained_compliance">
-                        <option selected disabled>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="">Select</option>
+                        <option value="1" {{ old('fifo_maintained_compliance')=='1' ? 'selected' : ''  }}>Yes</option>
+                        <option value="2" {{ old('fifo_maintained_compliance')=='2' ? 'selected' : ''  }}>No</option>
                     </select>
                 </td>
                 <td class="tg-0lax">
@@ -159,11 +164,12 @@
                 <td class="tg-amwm">6</td>
                 <td class="tg-0lax">Pets control program organized in last 6 months</td>
                 <td class="tg-0lax">
-                    <select class="custom-select custom-select-md mb-3" id="pets_control_in6months_compliance"
+                    <select class="custom-select custom-select-md mb-3 @error('pets_control_in6months_compliance') is-invalid @enderror"
+                            id="pets_control_in6months_compliance"
                             name="pets_control_in6months_compliance">
-                        <option selected disabled>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="">Select</option>
+                        <option value="1" {{ old('pets_control_in6months_compliance')=='1' ? 'selected' : ''  }}>Yes</option>
+                        <option value="2" {{ old('pets_control_in6months_compliance')=='2' ? 'selected' : ''  }}>No</option>
                     </select>
                 </td>
                 <td class="tg-0lax">
@@ -185,11 +191,12 @@
                 <td class="tg-amwm">7</td>
                 <td class="tg-0lax">Stock recommended height</td>
                 <td class="tg-0lax">
-                    <select class="custom-select custom-select-md mb-3" id="recommended_height_compliance"
+                    <select class="custom-select custom-select-md mb-3 @error('recommended_height_compliance') is-invalid @enderror"
+                            id="recommended_height_compliance"
                             name="recommended_height_compliance">
-                        <option selected disabled>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="">Select</option>
+                        <option value="1" {{ old('recommended_height_compliance')=='1' ? 'selected' : ''  }}>Yes</option>
+                        <option value="2" {{ old('recommended_height_compliance')=='2' ? 'selected' : ''  }}>No</option>
                     </select>
                 </td>
                 <td class="tg-0lax">
@@ -211,11 +218,12 @@
                 <td class="tg-amwm">8</td>
                 <td class="tg-0lax">Storage area proper illuminated</td>
                 <td class="tg-0lax">
-                    <select class="custom-select custom-select-md mb-3" id="proper_illiminated_compliance"
+                    <select class="custom-select custom-select-md mb-3 @error('proper_illiminated_compliance') is-invalid @enderror"
+                            id="proper_illiminated_compliance"
                             name="proper_illiminated_compliance">
-                        <option selected disabled>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="">Select</option>
+                        <option value="1" {{ old('proper_illiminated_compliance')=='1' ? 'selected' : ''  }}>Yes</option>
+                        <option value="2" {{ old('proper_illiminated_compliance')=='2' ? 'selected' : ''  }}>No</option>
                     </select>
                 </td>
                 <td class="tg-0lax">
@@ -237,11 +245,12 @@
                 <td class="tg-amwm">9</td>
                 <td class="tg-0lax">Segregated storage area from expired &amp; damage product</td>
                 <td class="tg-0lax">
-                    <select class="custom-select custom-select-md mb-3" id="sagregated_from_expired_dmg_compliance"
+                    <select class="custom-select custom-select-md mb-3 @error('sagregated_from_expired_dmg_compliance') is-invalid @enderror"
+                            id="sagregated_from_expired_dmg_compliance"
                             name="sagregated_from_expired_dmg_compliance">
-                        <option selected disabled>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="">Select</option>
+                        <option value="1" {{ old('sagregated_from_expired_dmg_compliance')=='1' ? 'selected' : ''  }}>Yes</option>
+                        <option value="2" {{ old('sagregated_from_expired_dmg_compliance')=='2' ? 'selected' : ''  }}>No</option>
                     </select>
                 </td>
                 <td class="tg-0lax">
@@ -263,11 +272,12 @@
                 <td class="tg-amwm">10</td>
                 <td class="tg-0lax">Sign put up declaring "DAMAGED STOCK. NOT FOR SALE" next to stales area</td>
                 <td class="tg-0lax">
-                    <select class="custom-select custom-select-md mb-3" id="sign_put_up_compliance"
+                    <select class="custom-select custom-select-md mb-3 @error('sign_put_up_compliance') is-invalid @enderror"
+                            id="sign_put_up_compliance"
                             name="sign_put_up_compliance">
-                        <option selected disabled>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="">Select</option>
+                        <option value="1" {{ old('sign_put_up_compliance')=='1' ? 'selected' : ''  }}>Yes</option>
+                        <option value="2" {{ old('sign_put_up_compliance')=='2' ? 'selected' : ''  }}>No</option>
                     </select>
                 </td>
                 <td class="tg-0lax">
@@ -289,11 +299,12 @@
                 <td class="tg-amwm">11</td>
                 <td class="tg-0lax">No exception on loading receipt quality</td>
                 <td class="tg-0lax">
-                    <select class="custom-select custom-select-md mb-3" id="loading_receipt_quality_compliance"
+                    <select class="custom-select custom-select-md mb-3 @error('loading_receipt_quality_compliance') is-invalid @enderror"
+                            id="loading_receipt_quality_compliance"
                             name="loading_receipt_quality_compliance">
-                        <option selected disabled>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="">Select</option>
+                        <option value="1" {{ old('loading_receipt_quality_compliance')=='1' ? 'selected' : ''  }}>Yes</option>
+                        <option value="2" {{ old('loading_receipt_quality_compliance')=='2' ? 'selected' : ''  }}>No</option>
                     </select>
                 </td>
                 <td class="tg-0lax">
@@ -317,15 +328,7 @@
         <div class="text-center">
             <button type="submit" class="btn btn-success btn-lg mt-4 mb-4" >Finish <i class="fas fa-check-circle"></i></button>
         </div>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+
 
         @if(session()->has('message'))
             <div class="alert alert-success">

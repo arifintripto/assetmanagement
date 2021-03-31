@@ -35,6 +35,7 @@ Route::get('/report/create/agreedaction/{id}', [ReportController::class, 'agreed
 Route::post('/report/create/agreedaction/{id}', [ReportController::class, 'agreedactionstore'])->name('agreedaction.store');
 Route::get('/report/create/godown/{id}', [ReportController::class, 'godown'])->name('godown');
 Route::post('/report/create/godown/{id}', [ReportController::class, 'godownstore'])->name('godown.store');
+Route::post('/report/create/step2/{id}', [ReportController::class, 'step2spostore'])->name('spo.store');
 
 
 //Route::get('upload_tab_csv', [AlltabsController::class ,'create']);
