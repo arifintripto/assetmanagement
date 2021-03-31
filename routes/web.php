@@ -59,3 +59,7 @@ Route::post('/report/create/godown/{id}', [ReportController::class, 'godownstore
 
     // return true if folder created
 //});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
