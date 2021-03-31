@@ -25,7 +25,6 @@ class PDFController extends Controller
 
         $db = DB::table('hierarchies')
             ->where('code', '=', $data->report_db)->first();
-        $spo = DB::table('hierarchies')->where('parent_code','=', $db->code);
         $tso = DB::table('hierarchies')
             ->where('code','=', $db->parent_code)->first();
         $asm = DB::table('hierarchies')
@@ -33,6 +32,9 @@ class PDFController extends Controller
 
         $rsm = DB::table('hierarchies')
             ->where('code','=', $asm->parent_code)->first();
+
+        $spo = DB::table('hierarchies')
+            ->where('code','=', $data->report_spo)->first();
 
         $hierarchy = array([
             'spo' => $spo,
@@ -63,7 +65,7 @@ class PDFController extends Controller
             ->where('code','=', $tso->parent_code)->first();
 
         $rsm = DB::table('hierarchies')
-            ->where('code','=', $asm->parent_code)->get();
+            ->where('code','=', $asm->parent_code)->first();
 
         $hierarchy = array([
             'db' =>$db,

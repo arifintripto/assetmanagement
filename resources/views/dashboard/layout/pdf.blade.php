@@ -79,7 +79,7 @@
     </tr>
     <tr>
         <td class="tg-0pky width-50-percent" colspan="3"><strong>Date: </strong>{{ $newDate = date("d F, Y", strtotime($data->report_date))  }}</td>
-        <td class="tg-0pky width-50-percent" colspan="3"><strong>RSM/ASM: </strong>{{ $hierarchy['rsm']->name }}</td>
+        <td class="tg-0pky width-50-percent" colspan="3"><strong>Report By: </strong>{{ $hierarchy['rsm']->name }}</td>
     </tr>
     <tr>
         <td class="tg-c3ow" colspan="6"><strong>Visit Location Details</strong></td>
