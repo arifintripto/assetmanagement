@@ -415,7 +415,9 @@ class ReportController extends Controller
      */
     public function index()
     {
-        //
+        $reports = DB::table('reports')
+            ->join('godownmaintenance', 'reports.id', '=', 'godownmaintenance.godown_report_id')->get();
+        dd($reports);
     }
 
     /**

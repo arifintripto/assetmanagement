@@ -39,10 +39,15 @@
                     <div class="sb-nav-link-icon"><i class="far fa-file-alt"></i></div>
                     Create Report
                 </a>
+                <a class="nav-link" href="{{ route('report.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-sitemap"></i></div>
+                    Reports
+                </a>
                 <a class="nav-link" href="{{ route('hierarchy.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-sitemap"></i></div>
                     Hierarchy
                 </a>
+
             </div>
         </div>
         <div class="sb-sidenav-footer">
