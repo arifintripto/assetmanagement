@@ -94,7 +94,7 @@
     </tr>
     <tr>
         <td class="tg-0lax width-50-percent" colspan="3"><strong>Town: </strong>{{ $hierarchy['db']->area }}</td>
-        <td class="tg-0lax width-50-percent" colspan="3"><strong>SPO: </strong>{{ $data->report_spo }}</td>
+        <td class="tg-0lax width-50-percent" colspan="3"><strong>SPO: </strong>{{ $hierarchy['spo']->name }}</td>
     </tr>
     <tr>
         <td class="tg-0lax" colspan="6"><strong>DB: </strong>{{ $hierarchy['db']->name }}</td>

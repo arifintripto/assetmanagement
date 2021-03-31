@@ -22,21 +22,24 @@ class PDFController extends Controller
             ->where('reports.id', '=', $id)
             ->first();
 
+
         $db = DB::table('hierarchies')
-            ->where('code', '=', $data->report_db)->get();
+            ->where('code', '=', $data->report_db)->first();
+        $spo = DB::table('hierarchies')->where('parent_code','=', $db->code);
         $tso = DB::table('hierarchies')
-            ->where('code','=', $db[0]->parent_code)->get();
+            ->where('code','=', $db->parent_code)->first();
         $asm = DB::table('hierarchies')
-            ->where('code','=', $tso[0]->parent_code)->get();
+            ->where('code','=', $tso->parent_code)->first();
 
         $rsm = DB::table('hierarchies')
-            ->where('code','=', $asm[0]->parent_code)->get();
+            ->where('code','=', $asm->parent_code)->first();
 
         $hierarchy = array([
-            'db' =>$db[0],
-            'tso'=>$tso[0],
-            'asm'=>$asm[0],
-            'rsm'=>$rsm[0]
+            'spo' => $spo,
+            'db' =>$db,
+            'tso'=>$tso,
+            'asm'=>$asm,
+            'rsm'=>$rsm
         ]);
         $hierarchy = $hierarchy[0];
 
@@ -53,20 +56,20 @@ class PDFController extends Controller
             ->first();
 
         $db = DB::table('hierarchies')
-            ->where('code', '=', $data->report_db)->get();
+            ->where('code', '=', $data->report_db)->first();
         $tso = DB::table('hierarchies')
-            ->where('code','=', $db[0]->parent_code)->get();
+            ->where('code','=', $db->parent_code)->first();
         $asm = DB::table('hierarchies')
-            ->where('code','=', $tso[0]->parent_code)->get();
+            ->where('code','=', $tso->parent_code)->first();
 
         $rsm = DB::table('hierarchies')
-            ->where('code','=', $asm[0]->parent_code)->get();
+            ->where('code','=', $asm->parent_code)->get();
 
         $hierarchy = array([
-            'db' =>$db[0],
-            'tso'=>$tso[0],
-            'asm'=>$asm[0],
-            'rsm'=>$rsm[0]
+            'db' =>$db,
+            'tso'=>$tso,
+            'asm'=>$asm,
+            'rsm'=>$rsm
         ]);
         $hierarchy = $hierarchy[0];
 
