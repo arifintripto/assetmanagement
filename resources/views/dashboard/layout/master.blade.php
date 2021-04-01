@@ -26,10 +26,13 @@
 
 <div id="layoutSidenav">
     {{--SIDE NAV START--}}
+    @auth
     @yield('sidenav')
+    @endauth
     {{--SIDE NAV END--}}
 
-    <div id="layoutSidenav_content">
+
+    <div id="layoutSidenav_content" @auth style="padding-left: 225px" @endauth>
         <main>
             <div class="container-fluid">
                 {{--CONTENTS START--}}

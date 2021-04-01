@@ -18,7 +18,7 @@
         </thead>
         <tbody>
         <tr>
-            <td colspan="2"><strong>Date: </strong>{{ $newDate = date("d F, Y", strtotime($data['report']->report_date))  }}</td>
+            <td colspan="2" style="width: 50%"><strong>Date: </strong>{{ $newDate = date("d F, Y", strtotime($data['report']->report_date))  }}</td>
             <td colspan="2"><strong>Report By: </strong>{{ Auth::user()->rsm_asm }} - {{ Auth::user()->name }}</td>
         </tr>
         <tr>

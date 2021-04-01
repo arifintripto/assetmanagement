@@ -15,8 +15,8 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->string('report_date')->nullable();
-            $table->boolean('report_asm_rsm')->default(1)->nullable();
+            $table->string('report_date');
+            $table->string('report_rsm_asm')->nullable();
             $table->string('report_spo')->nullable();
             $table->string('report_db')->nullable();
             $table->timestamps();

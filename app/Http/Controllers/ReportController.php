@@ -19,9 +19,11 @@ class ReportController extends Controller
     public function step2show($id) {
 
 
+
         $report = DB::table('reports')
             ->where('id', '=', $id)
             ->first();
+
         $db = DB::table('hierarchies')
             ->where('code', '=', $report->report_db)->first();
         $tso = DB::table('hierarchies')
@@ -417,7 +419,16 @@ class ReportController extends Controller
     {
         $reports = DB::table('reports')
             ->join('godownmaintenance', 'reports.id', '=', 'godownmaintenance.godown_report_id')->get();
-        dd($reports);
+
+        foreach ($reports as $report) {
+            $db_codes[] = $report->report_db;
+        }
+
+        $dbs = DB::table('hierarchies')
+                ->whereIn('code', $db_codes)->get();
+
+
+        return view('dashboard.pages.report.index', compact('reports', 'dbs'));
     }
 
     /**
@@ -480,17 +491,15 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user()->rsm_asm;
         $db = DB::table('hierarchies')
             ->where('code', '=', \request('report_db'))->get();
         $db = $db[0];
-//        $tso = DB::table('hierarchies')
-//            ->where('code','=', $db[0]->parent_code)->get();
-//        $asm = DB::table('hierarchies')
-//            ->where('code','=', $tso[0]->parent_code)->get();
 
 
         DB::table('reports')->insert([
             'report_date'=> Carbon::today()->toDateString(),
+            'report_rsm_asm'=> $user,
             'report_db' => $db->code
         ]);
 

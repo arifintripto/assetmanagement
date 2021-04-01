@@ -1,5 +1,8 @@
+body {
+    font-family: "Helvetica Neue", Arial;
+}
 .navbar {
-    border-bottom: 1px solid #eee;
+    /*border-bottom: 1px solid #eee;*/
 }
 .alert-success {
     color: white;
