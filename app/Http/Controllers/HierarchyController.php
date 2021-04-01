@@ -100,10 +100,10 @@ HierarchyController extends Controller
      * @param  \App\Models\Hierarchy  $hierarchy
      * @return \Illuminate\Http\Response
      */
-    public function show(Hierarchy $hierarchy)
-    {
-        //
-    }
+//    public function show(Hierarchy $hierarchy)
+//    {
+//        //
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -111,10 +111,10 @@ HierarchyController extends Controller
      * @param  \App\Models\Hierarchy  $hierarchy
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hierarchy $hierarchy)
-    {
-        //
-    }
+//    public function edit(Hierarchy $hierarchy)
+//    {
+//        //
+//    }
 
     /**
      * Update the specified resource in storage.
@@ -123,10 +123,10 @@ HierarchyController extends Controller
      * @param  \App\Models\Hierarchy  $hierarchy
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hierarchy $hierarchy)
-    {
-        //
-    }
+//    public function update(Request $request, Hierarchy $hierarchy)
+//    {
+//        //
+//    }
 
     /**
      * Remove the specified resource from storage.
@@ -134,8 +134,8 @@ HierarchyController extends Controller
      * @param  \App\Models\Hierarchy  $hierarchy
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hierarchy $hierarchy)
-    {
-        //
-    }
+//    public function destroy(Hierarchy $hierarchy)
+//    {
+//        //
+//    }
 }

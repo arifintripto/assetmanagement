@@ -517,10 +517,10 @@ class ReportController extends Controller
      * @param  \App\Models\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function show(Report $report)
-    {
-        //
-    }
+//    public function show(Report $report)
+//    {
+//        //
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -528,10 +528,10 @@ class ReportController extends Controller
      * @param  \App\Models\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function edit(Report $report)
-    {
-        //
-    }
+//    public function edit(Report $report)
+//    {
+//        //
+//    }
 
     /**
      * Update the specified resource in storage.
@@ -540,10 +540,10 @@ class ReportController extends Controller
      * @param  \App\Models\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Report $report)
-    {
-        //
-    }
+//    public function update(Request $request, Report $report)
+//    {
+//        //
+//    }
 
     /**
      * Remove the specified resource from storage.
@@ -551,8 +551,8 @@ class ReportController extends Controller
      * @param  \App\Models\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Report $report)
-    {
-        //
-    }
+//    public function destroy(Report $report)
+//    {
+//        //
+//    }
 }
