@@ -251,7 +251,7 @@ class ReportController extends Controller
     public function agreedactionstore($id) {
 
         $validate_agreedaction = \request()->validate([
-            'db_point_actions_agreed' => 'string',
+            'db_point_actions_agreed' => 'string|nullable',
             'db_point_responsibility' => 'numeric|nullable',
             'db_point_timeline' => 'nullable',
             'sub_db_point_actions_agreed' => 'string|nullable',

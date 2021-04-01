@@ -2,16 +2,11 @@
 @extends('dashboard.layout.layout')
 
 @section('content')
-    <h2 class="mt-4">Create New Report</h2>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('report.index') }}">Report</a></li>
-        <li class="breadcrumb-item active">Create New Report</li>
-    </ol>
+    <h2 class="mt-4 mb-4">Create New Report</h2>
 
     <form class="mb-5" method="POST" action="{{ route('report.store') }}">
         @csrf
-        <div class="card mb-4">
+        <div class="card bg-light mb-4">
             <div class="card-body">
                 <h5 class="card-title">Report Details</h5>
                 <div class="form-row">
@@ -24,11 +19,6 @@
                             @endforeach
                         </select>
                     </div>
-{{--                    <div class="form-group col-md-6">--}}
-{{--                        <label for="report_spo">SPO</label>--}}
-{{--                        <input type="text" class="form-control mb-3" id="report_spo" placeholder="SPO" name="report_spo"--}}
-{{--                               autocomplete="off" value="{{ old('report_spo') }}">--}}
-{{--                    </div>--}}
                 </div>
             </div>
         </div>

@@ -3,12 +3,7 @@
 
 
 @section('content')
-    <h2 class="mt-4">Create New Report</h2>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('report.index') }}">Report</a></li>
-        <li class="breadcrumb-item active">Create New Report</li>
-    </ol>
+    <h2 class="mt-4 mb-4">Visit Area Details</h2>
 
     <style>
         th {

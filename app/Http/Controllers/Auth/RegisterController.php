@@ -83,7 +83,6 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $rsm_asm = DB::table('hierarchies')->where('code','=', \request('rsm_asm'))->first();
-//        dd($rsm_asm->id);
 
         return User::create([
             'name' => $rsm_asm->name,

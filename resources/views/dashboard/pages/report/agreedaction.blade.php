@@ -3,12 +3,7 @@
 
 
 @section('content')
-    <h2 class="mt-4">Actions Agreed</h2>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('report.index') }}">Report</a></li>
-        <li class="breadcrumb-item active">Actions Agreed</li>
-    </ol>
+    <h2 class="mt-4 mb-4">Actions Agreed</h2>
 
     <form class="mb-5" method="POST" action="{{ route('agreedaction.store', ['id' => $id]) }}">
         @csrf
@@ -25,7 +20,7 @@
             <tbody>
             <tr>
                 <th scope="row">DB Pt.</th>
-                <td><input type="text" class="form-control mb-3 @error('db_point_actions_agreed') is-invalid @enderror"
+                <td><input type="text" class="form-control  @error('db_point_actions_agreed') is-invalid @enderror"
                            id="db_point_actions_agreed"
                            placeholder="Db Pt. Actions Agreed"
                            name="db_point_actions_agreed"
@@ -35,7 +30,7 @@
                     @enderror
                 </td>
                 <td>
-                    <select class="custom-select custom-select-md mb-3 @error('db_point_responsibility') is-invalid @enderror"
+                    <select class="custom-select custom-select-md  @error('db_point_responsibility') is-invalid @enderror"
                             id="db_point_responsibility"
                             name="db_point_responsibility">
                         <option value="">DB Point Responsibility</option>
@@ -48,7 +43,7 @@
                     @enderror
                 </td>
                 <td>
-                    <input type="date" class="form-control mb-3 @error('market_beat_visited') is-invalid @enderror"
+                    <input type="date" class="form-control  @error('market_beat_visited') is-invalid @enderror"
                            id="db_point_timeline"
                            placeholder="Db Pt. Timeline"
                            name="db_point_timeline"
@@ -61,7 +56,7 @@
             <tr>
                 <th scope="row">Sub-DB</th>
                 <td>
-                    <input type="text" class="form-control mb-3 @error('sub_db_point_actions_agreed') is-invalid @enderror"
+                    <input type="text" class="form-control  @error('sub_db_point_actions_agreed') is-invalid @enderror"
                            id="sub_db_point_actions_agreed"
                            placeholder="Sub-DB Actions Agreed"
                            name="sub_db_point_actions_agreed"
@@ -72,7 +67,7 @@
                     @enderror
                 </td>
                 <td>
-                    <select class="custom-select custom-select-md mb-3 @error('sub_db_point_responsibility') is-invalid @enderror"
+                    <select class="custom-select custom-select-md  @error('sub_db_point_responsibility') is-invalid @enderror"
                             id="sub_db_point_responsibility"
                             name="sub_db_point_responsibility">
                         <option value="">Sub-DB Point Responsibility</option>
@@ -85,7 +80,7 @@
                     @enderror
                 </td>
                 <td>
-                    <input type="date" class="form-control mb-3 @error('sub_db_point_timeline') is-invalid @enderror"
+                    <input type="date" class="form-control  @error('sub_db_point_timeline') is-invalid @enderror"
                            id="sub_db_point_timeline"
                            placeholder="Sub-DB Timeline"
                            name="sub_db_point_timeline"
@@ -99,7 +94,7 @@
             <tr>
                 <th scope="row">Overview</th>
                 <td>
-                    <input type="text" class="form-control mb-3 @error('overview_actions_agreed') is-invalid @enderror"
+                    <input type="text" class="form-control  @error('overview_actions_agreed') is-invalid @enderror"
                            autocomplete="off"
                            placeholder="Overview Actions Agreed"
                            name="overview_actions_agreed"
@@ -110,7 +105,7 @@
                     @enderror
                 </td>
                 <td>
-                    <select class="custom-select custom-select-md mb-3 @error('overview_responsibility') is-invalid @enderror"
+                    <select class="custom-select custom-select-md  @error('overview_responsibility') is-invalid @enderror"
                             id="overview_responsibility"
                             name="overview_responsibility">
                         <option value="">Overview Responsibility</option>
@@ -123,7 +118,7 @@
                     @enderror
                 </td>
                 <td>
-                    <input type="date" class="form-control mb-3 @error('overview_timeline') is-invalid @enderror"
+                    <input type="date" class="form-control  @error('overview_timeline') is-invalid @enderror"
                            autocomplete="off"
                            placeholder="Overview Timeline"
                            name="overview_timeline"
@@ -137,7 +132,7 @@
             <tr>
                 <th scope="row">Processes</th>
                 <td>
-                    <input type="text" class="form-control mb-3 @error('processes_actions_agreed') is-invalid @enderror"
+                    <input type="text" class="form-control  @error('processes_actions_agreed') is-invalid @enderror"
                            autocomplete="off"
                            placeholder="Processes Actions Agreed"
                            name="processes_actions_agreed"
@@ -148,7 +143,7 @@
                     @enderror
                 </td>
                 <td>
-                    <select class="custom-select custom-select-md mb-3 @error('processes_responsibility') is-invalid @enderror"
+                    <select class="custom-select custom-select-md  @error('processes_responsibility') is-invalid @enderror"
                             id="processes_responsibility"
                             name="processes_responsibility">
                         <option value="">Processes Responsibility</option>
@@ -161,7 +156,7 @@
                     @enderror
                 </td>
                 <td>
-                    <input type="date" class="form-control mb-3 @error('processes_timeline') is-invalid @enderror"
+                    <input type="date" class="form-control  @error('processes_timeline') is-invalid @enderror"
                            autocomplete="off"
                            placeholder="Processes Timeline"
                            name="processes_timeline"
@@ -175,7 +170,7 @@
             <tr>
                 <th scope="row">Mkt Work</th>
                 <td>
-                    <input type="text" class="form-control mb-3 @error('mkt_work_actions_agreed') is-invalid @enderror"
+                    <input type="text" class="form-control  @error('mkt_work_actions_agreed') is-invalid @enderror"
                            autocomplete="off"
                            placeholder="Mkt Work Actions Agreed"
                            name="mkt_work_actions_agreed"
@@ -186,7 +181,7 @@
                     @enderror
                 </td>
                 <td>
-                    <select class="custom-select custom-select-md mb-3 @error('mkt_work_responsibility') is-invalid @enderror"
+                    <select class="custom-select custom-select-md  @error('mkt_work_responsibility') is-invalid @enderror"
                             id="mkt_work_responsibility"
                             name="mkt_work_responsibility">
                         <option value="">Mkt Work Responsibility</option>
@@ -199,7 +194,7 @@
                     @enderror
                 </td>
                 <td>
-                    <select class="custom-select custom-select-md mb-3 @error('mkt_work_timeline') is-invalid @enderror"
+                    <select class="custom-select custom-select-md  @error('mkt_work_timeline') is-invalid @enderror"
                             id="mkt_work_timeline"
                             name="mkt_work_timeline">
                         <option value="">Mkt Work Timeline</option>
@@ -214,7 +209,7 @@
             <tr>
                 <th scope="row">People</th>
                 <td>
-                    <input type="text" class="form-control mb-3 @error('people_actions_agreed') is-invalid @enderror"
+                    <input type="text" class="form-control  @error('people_actions_agreed') is-invalid @enderror"
                            autocomplete="off"
                            placeholder="People Actions Agreed"
                            name="people_actions_agreed"
@@ -225,7 +220,7 @@
                     @enderror
                 </td>
                 <td>
-                    <select class="custom-select custom-select-md mb-3 @error('people_responsibility') is-invalid @enderror"
+                    <select class="custom-select custom-select-md  @error('people_responsibility') is-invalid @enderror"
                             id="people_responsibility"
                             name="people_responsibility">
                         <option value="">People Responsibility</option>
@@ -238,7 +233,7 @@
                     @enderror
                 </td>
                 <td>
-                    <input type="date" class="form-control mb-3 @error('people_timeline') is-invalid @enderror"
+                    <input type="date" class="form-control  @error('people_timeline') is-invalid @enderror"
                            autocomplete="off"
                            placeholder="People Timeline"
                            name="people_timeline"
@@ -252,7 +247,7 @@
             <tr>
                 <th scope="row">Other</th>
                 <td>
-                    <input type="text" class="form-control mb-3 @error('other_actions_agreed') is-invalid @enderror"
+                    <input type="text" class="form-control  @error('other_actions_agreed') is-invalid @enderror"
                            autocomplete="off"
                            placeholder="Other Actions Agreed"
                            name="other_actions_agreed"
@@ -263,7 +258,7 @@
                     @enderror
                 </td>
                 <td>
-                    <select class="custom-select custom-select-md mb-3 @error('other_responsibility') is-invalid @enderror"
+                    <select class="custom-select custom-select-md  @error('other_responsibility') is-invalid @enderror"
                             id="other_responsibility"
                             name="other_responsibility">
                         <option value="">Other Responsibility</option>
@@ -276,7 +271,7 @@
                     @enderror
                 </td>
                 <td>
-                    <input type="date" class="form-control mb-3 @error('other_timeline') is-invalid @enderror"
+                    <input type="date" class="form-control  @error('other_timeline') is-invalid @enderror"
                            autocomplete="off"
                            placeholder="Other Timeline"
                            name="other_timeline"
@@ -294,15 +289,6 @@
         <div class="col-md-12 text-center">
             <button type="submit" class="btn btn-success btn-lg mt-4 mb-4">Next <i class="fas fa-chevron-circle-right"></i></button>
         </div>
-{{--        @if ($errors->any())--}}
-{{--            <div class="alert alert-danger">--}}
-{{--                <ul>--}}
-{{--                    @foreach ($errors->all() as $error)--}}
-{{--                        <li>{{ $error }}</li>--}}
-{{--                    @endforeach--}}
-{{--                </ul>--}}
-{{--            </div>--}}
-{{--        @endif--}}
 
         @if(session()->has('message'))
             <div class="alert alert-success">
