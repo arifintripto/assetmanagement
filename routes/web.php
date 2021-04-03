@@ -38,29 +38,6 @@ Route::post('/report/create/godown/{id}', [ReportController::class, 'godownstore
 Route::post('/report/create/step2/{id}', [ReportController::class, 'step2spostore'])->name('spo.store');
 
 
-//Route::get('upload_tab_csv', [AlltabsController::class ,'create']);
-//Route::post('upload_tab_csv', [AlltabsController::class ,'store']);
-//Route::get('alltabs', [AlltabsController::class ,'index']);
-//Route::get('feedtabsdata', [AlltabsController::class ,'index']);
-//Route::get('feedtabsdata', [TabController::class ,'alltabsToTab']);
-//
-//Route::resource('department', DepartmentController::class);
-//Route::resource('employee', EmployeeController::class);
-//Route::resource('markethierarchy', MarketHierarchyController::class);
-//
-//
-
-
-
-//Route::get('/test',function(){
-//    $create_csv_folder = File::makeDirectory(base_path().'/resources/csv');
-//    $create_tab_csv_folder = File::makeDirectory(base_path().'/resources/csv/tab_csv');
-//    $result = File::isDirectory(base_path().'/resources/csv/tab_csv');
-//    dd($result);
-
-    // return true if folder created
-//});
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
