@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\Department;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HierarchyController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\SimController;
 use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +18,12 @@ use App\Http\Controllers\PDFController;
 */
 
 Route::get('/', function () {
-    return redirect(\route('report.create'));
+    return redirect(\route('hierarchy.index'));
 });
 Route::resource('hierarchy', HierarchyController::class);
 Route::resource('report', ReportController::class);
+Route::resource('department', DepartmentController::class);
+Route::resource('sim', SimController::class);
 Route::get('/reportpdf/{id}', [PDFController::class ,'generatePDF'])->name('getpdf');
 Route::get('/godown_report/{id}', [PDFController::class ,'godown_maintenance_pdf'])->name('godown_report');
 Route::get('/report/create/step2/{id}', [ReportController::class, 'step2show'])->name('step2show');

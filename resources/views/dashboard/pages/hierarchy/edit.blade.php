@@ -20,27 +20,6 @@
                        autocomplete="off" value="{{ $markethierarchy->name }}">
             </div>
         </div>
-{{--        <div class="form-row">--}}
-{{--            <div class="form-group col-md-6">--}}
-{{--                <label for="markethierarchy_type_select">Employee Type</label>--}}
-{{--                <select class="custom-select custom-select-md mb-3" id="employee_type_select" name="type">--}}
-{{--                    <option selected>Type</option>--}}
-{{--                    <option value="1" @if(($employee->type) == 1) selected @endif>RSM</option>--}}
-{{--                    <option value="2" @if(($employee->type) == 2) selected @endif>ASM</option>--}}
-{{--                    <option value="3" @if(($employee->type) == 3) selected @endif>TSO</option>--}}
-{{--                    <option value="4" @if(($employee->type) == 4) selected @endif>SPO</option>--}}
-{{--                </select>--}}
-{{--            </div>--}}
-{{--            <div class="form-group col-md-6">--}}
-{{--                <label for="department_select">Department</label>--}}
-{{--                <select class="custom-select custom-select-md mb-3" id="department_select" name="department_id">--}}
-{{--                    <option selected>Department</option>--}}
-{{--                    @foreach($departments as $department)--}}
-{{--                        <option value="{{ $department->id }}" @if(($employee->department->id) == ($department->id)) selected @endif>{{ $department->name }}</option>--}}
-{{--                    @endforeach--}}
-{{--                </select>--}}
-{{--            </div>--}}
-{{--        </div>--}}
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="employee_mobile">Mobile Number</label>

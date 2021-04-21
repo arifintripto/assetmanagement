@@ -52,12 +52,8 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        $rsm_asms = DB::table('hierarchies')
-                    ->where('code','like', 'RM%')
-                    ->orWhere('code', 'like', 'AM%')
-                    ->get();
 
-        return view('auth.register', compact('rsm_asms'));
+        return view('auth.register');
     }
 
     /**
@@ -69,6 +65,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -82,11 +79,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $rsm_asm = DB::table('hierarchies')->where('code','=', \request('rsm_asm'))->first();
 
         return User::create([
-            'name' => $rsm_asm->name,
-            'rsm_asm' => $rsm_asm->code,
+            'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);

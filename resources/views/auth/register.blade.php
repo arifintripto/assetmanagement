@@ -6,38 +6,31 @@
         <div class="card col-md-6 mt-5">
 
             <div class="card-body">
-                @if(!isset($rsm_asms[0]))
-                    <div class="text-center">
-                        <h2 class="mb-4">Please Upload Market Hierarchy First!</h2>
-                        <a href="{{ route('hierarchy.index') }}" class="btn btn-success">Upload Hierarchy</a>
-                    </div>
-                @else
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="rsm_asm"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('RSM/ASM Code') }}</label>
+                            <label for="name"
+                                   class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <select class="custom-select custom-select-md mb-3" id="rsm_asm" name="rsm_asm"
-                                        required>
-                                    <option value="">Select RSM/ASM</option>
-                                    @foreach( $rsm_asms as $rsm_asm)
-                                        <option value="{{ $rsm_asm->code }}">{{ $rsm_asm->code }}
-                                            - {{ $rsm_asm->name }}</option>
-                                    @endforeach
-                                </select>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                                       name="name" value="{{ old('name') }}" required autocomplete="off">
+
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="email"
                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                       name="email" value="{{ old('email') }}" required autocomplete="email">
+                                       name="email" value="{{ old('email') }}" required autocomplete="off">
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -54,7 +47,7 @@
                             <div class="col-md-6">
                                 <input id="password" type="password"
                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                       required autocomplete="new-password">
+                                       required autocomplete="off">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -70,7 +63,7 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control"
-                                       name="password_confirmation" required autocomplete="new-password">
+                                       name="password_confirmation" required autocomplete="off">
                             </div>
                         </div>
 
@@ -82,7 +75,6 @@
                             </div>
                         </div>
                     </form>
-                @endif
 
 
             </div>
