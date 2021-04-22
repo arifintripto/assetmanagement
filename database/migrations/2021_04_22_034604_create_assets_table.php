@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSimsTable extends Migration
+class CreateAssetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateSimsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sims', function (Blueprint $table) {
+        Schema::create('assets', function (Blueprint $table) {
             $table->id();
-            $table->string('number');
-            $table->string('serial_no');
-            $table->integer('pin1');
-            $table->integer('pin2');
-            $table->integer('puk1');
-            $table->integer('puk2');
-            $table->boolean('is_assigned')->default(0);
-            $table->string('assigned_to')->nullable();
+            $table->string('employee_id')->nullable();
+            $table->string('item_id')->nullable();
+            $table->string('condition');
+            $table->date('assigned_date');
+            $table->integer('status')->nullable();
+            $table->integer('knox')->nullable();
+            $table->text('remarks')->nullable();
             $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
@@ -35,6 +34,6 @@ class CreateSimsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sims');
+        Schema::dropIfExists('assets');
     }
 }

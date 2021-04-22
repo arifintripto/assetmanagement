@@ -37,6 +37,16 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-sitemap"></i></div>
                     Hierarchy
                 </a>
+                <a class="nav-link" href="{{ route('sim.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-sim-card"></i></div>
+                    Sim
+                </a>
+                <a class="nav-link" href="{{ route('item.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-dice-d6"></i></div>
+                    Item
+                </a>
+
+
 
             </div>
         </div>

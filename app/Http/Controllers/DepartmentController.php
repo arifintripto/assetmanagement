@@ -14,7 +14,6 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-//        $departments = Department::all();
         $departments = Department::where('is_active','=',1)->get();
         return view('dashboard.pages.department.index', compact('departments'));
     }
@@ -97,7 +96,6 @@ class DepartmentController extends Controller
     {
         $department->is_active = 0;
         $department->save();
-//        $department->delete();
 
         return redirect('department')->with('deletedDepartmentMsg', 'Department Deleted Successfully!');
     }

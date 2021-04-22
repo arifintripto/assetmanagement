@@ -5,6 +5,8 @@ use App\Http\Controllers\HierarchyController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SimController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\AssetController;
 use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,8 @@ Route::resource('hierarchy', HierarchyController::class);
 Route::resource('report', ReportController::class);
 Route::resource('department', DepartmentController::class);
 Route::resource('sim', SimController::class);
+Route::resource('item', ItemController::class);
+Route::resource('asset', AssetController::class);
 Route::get('/reportpdf/{id}', [PDFController::class ,'generatePDF'])->name('getpdf');
 Route::get('/godown_report/{id}', [PDFController::class ,'godown_maintenance_pdf'])->name('godown_report');
 Route::get('/report/create/step2/{id}', [ReportController::class, 'step2show'])->name('step2show');

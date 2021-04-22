@@ -110,6 +110,8 @@ class SimController extends Controller
     public function destroy(Sim $sim)
     {
         $sim->is_active = 0;
+        $sim->is_assigned = 0;
+        $sim->assigned_to = null;
         $sim->save();
 
         return redirect('sim')->with('deletedSimMsg', 'SIM Deleted Successfully!');
